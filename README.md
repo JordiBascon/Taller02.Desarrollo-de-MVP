@@ -14,3 +14,16 @@ return
 <Producto>Titulo: {$Item/Nombre/text()}
 Año de Lanzamiento: {$Item/EstadoConservacion/text()}
 Valor: {$Item/ValorEstimado/text()}</Producto>
+
+### Consulta 3. Buscador por Serial Number que genere una página de "Certificado de Autenticidad" con los datos del ítem.
+for $item in //Item
+where $item/SerialNumber = "SN-000001#MA"
+return
+<Producto>
+--Certificación de autenticidad--
+
+Numero de Serie: {$item/SerialNumber/text()}
+Nombre: {$item/Nombre/text()}
+Fabricante: {$item/Fabricante/text()}
+Lanzamiento: {$item/AnioLanzamiento/text()}
+</Producto>
